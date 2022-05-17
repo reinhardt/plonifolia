@@ -8,7 +8,7 @@ py3/bin/pip:
 py3/bin/buildout: py3/bin/pip requirements.txt
 	./py3/bin/pip install -IUr requirements.txt
 
-buildout_cfgs := $(wildcard *.cfg config/*.cfg profiles/*.cfg)
+buildout_cfgs := $(wildcard *.cfg config/*.cfg profiles/*.cfg custom.cfg)
 .installed.cfg: py3/bin/buildout $(buildout_cfgs)
 	./py3/bin/buildout
 
